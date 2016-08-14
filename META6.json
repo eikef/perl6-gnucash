@@ -1,0 +1,13 @@
+{
+    "perl" : "6.c",
+    "name" : "gnucash",
+    "version" : "0.0.1",
+    "description" : "gnucash wrapper library",
+    "authors" : [ "Eike Frost" ],
+    "provides" : {
+        "gnucash" : "lib/gnucash.pm6"
+    },
+    "depends" : [ ],
+    "resources" : [ ],
+    "source-url" : "git://github.com/eikef/perl6-gnucash.git"
+}
