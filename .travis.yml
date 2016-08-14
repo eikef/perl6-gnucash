@@ -1,0 +1,19 @@
+language: perl6
+
+os:
+  - linux
+
+perl6:
+  - 2016.07.1
+  - latest
+
+before_install:
+  - echo $TRAVIS_OS_NAME
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get -qq update           ; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install gnucash ; fi
+
+install:
+  - rakudobrew build panda
+  - panda installdeps .
+
+script: prove -v -e "perl6 -Ilib" t/ && panda install .
