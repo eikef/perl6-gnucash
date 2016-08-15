@@ -1,7 +1,14 @@
 use v6;
 use Test;
-use gnucash;
 
-plan 1;
+plan 3;
 
-ok gctest() == 42, "gctest has value 42, naturally";
+use gnucash; pass "Import gnucash";
+
+# Sessions
+my $session = gnucash::QofSession.new();
+
+isa-ok $session, gnucash::QofSession, "Session created";
+
+$session.begin('', 0, 0, 0); pass "Session begun";
+
