@@ -4,12 +4,12 @@ unit module gnucash:auth<github:eikef>;
 
 use NativeCall;
 
-# For now this only works without change if you are on *ix and the gnucash libraries are found in /usr/lib64/gnucash. Unfortunately relative paths do not work.
+# This could be used for some more magic finding the correct library to load -- right now it just returns a library name and works on *ix
 sub gncmod-engine {
-    $*VM.platform-library-name('/usr/lib64/gnucash/gncmod-engine'.IO).Str
+    $*VM.platform-library-name('gncmod-engine'.IO).Str;
 }
 
-class QofSession is repr('CPointer') {
+class QofSession is repr('CPointer') is export {
     sub qof_session_new() is native(&gncmod-engine) returns QofSession { * }
     sub qof_session_begin(QofSession $session, Str $book_id, int64 $ignore_lock, int64 $create, int64 $force) is native(&gncmod-engine) { * }
 
