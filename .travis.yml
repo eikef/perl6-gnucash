@@ -17,5 +17,5 @@ install:
 
 script: 
   - export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/gnucash/gnucash
-  - ls -la /usr/lib/x86_64-linux-gnu/gnucash/gnucash
+  - ls -lRa /usr/lib/
   - prove -v -e "perl6 -Ilib" t/ && panda install .
