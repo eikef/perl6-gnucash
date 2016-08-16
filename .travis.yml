@@ -15,7 +15,6 @@ install:
   - rakudobrew build panda
   - panda installdeps .
 
-script: 
-  - export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/gnucash/gnucash
-  - ls -lRa /usr/lib/
+script:
+  - export LD_LIBRARY_PATH=/usr/lib/gnucash/gnucash
   - prove -v -e "perl6 -Ilib" t/ && panda install .
