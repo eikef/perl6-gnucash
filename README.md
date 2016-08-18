@@ -17,7 +17,7 @@ this currently requires a correctly-set LD_LIBRARY_PATH. Examples are noted belo
 
 ```
 sudo apt-get install gnucash
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/gnucash/gnucash
+export LD_LIBRARY_PATH=/usr/lib/gnucash/gnucash
 ```
 
 ### Fedora
@@ -27,7 +27,7 @@ dnf install gnucash
 export LD_LIBRARY_PATH=/usr/lib64/gnucash
 ```
 
-### ARch
+### Arch
 ```
 pacman -Sy gnucash
 export LD_LIBRARY_PATH=/usr/lib64/gnucash
