@@ -6,6 +6,7 @@
     "authors" : [ "Eike Frost" ],
     "provides" : {
         "gnucash" : "lib/gnucash.pm"
+        "gnucash::NativeLib" : "lib/gnucash/NativeLib.pm"
     },
     "depends" : [ ],
     "resources" : [ ],

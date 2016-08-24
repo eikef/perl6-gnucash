@@ -29,12 +29,12 @@ sub gnc_engine_init(int64 $argc, CArray[Str] $argv -->OpaquePointer) is native(&
 # for detailed descriptions of what the methods do
 class QofSession is repr('CPointer') is export {
     # Convenience methods
-    
+
     method new(-->QofSession) { self.qof_session_new() }
     method begin(Str $book_id, int64 $ignore_lock = 0, int64 $create = 0, int64 $force = 0) { self.qof_session_begin($book_id, $ignore_lock, $create, $force) }
 
     # Native methods
-    method qof_session_new(-->QofSession) is native(&gnc-qof) { * }
+    method qof_session_new(::?CLASS:D: -->QofSession) is native(&gnc-qof) { * }
 
     method qof_session_begin(Str $book_id, int64 $ignore_lock, int64 $create, int64 $force) is native(&gnc-qof) { * }
 
